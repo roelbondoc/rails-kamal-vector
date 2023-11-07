@@ -1,0 +1,37 @@
+service: rails-kamal-vector
+
+image: <your registry path>/rails-kamal-vector
+
+servers:
+  web:
+    hosts:
+      - <your ip address here>
+
+registry:
+  username: registry-user-name
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+
+builder:
+  remote:
+    arch: amd64
+    host: ssh://root@<your ip address here>
+
+traefik:
+  args:
+    accesslog: true
+    accesslog.format: json
+
+accessories:
+  vector:
+    image: timberio/vector:latest-alpine
+    roles:
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    files:
+      - "./config/vector/vector.yaml:/etc/vector/vector.yaml"
