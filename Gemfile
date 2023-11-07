@@ -68,3 +68,5 @@ group :test do
 end
 
 gem "kamal", "~> 1.1"
+
+gem "lograge", "~> 0.14.0"

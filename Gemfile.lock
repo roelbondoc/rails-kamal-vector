@@ -129,6 +129,11 @@ GEM
       sshkit (~> 1.21)
       thor (~> 1.2)
       zeitwerk (~> 2.5)
+    lograge (0.14.0)
+      actionpack (>= 4)
+      activesupport (>= 4)
+      railties (>= 4)
+      request_store (~> 1.0)
     loofah (2.21.4)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -157,6 +162,8 @@ GEM
     net-ssh (7.2.0)
     nio4r (2.5.9)
     nokogiri (1.15.4-aarch64-linux)
+      racc (~> 1.4)
+    nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
     psych (5.1.1.1)
       stringio
@@ -207,6 +214,8 @@ GEM
     regexp_parser (2.8.2)
     reline (0.4.0)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     rexml (3.2.6)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
@@ -222,6 +231,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.8-aarch64-linux)
+    sqlite3 (1.6.8-x86_64-linux)
     sshkit (1.21.5)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -253,6 +263,7 @@ GEM
 PLATFORMS
   aarch64-linux
   aarch64-linux-musl
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -261,6 +272,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal (~> 1.1)
+  lograge (~> 0.14.0)
   puma (>= 5.0)
   rails (~> 7.1.1)
   selenium-webdriver

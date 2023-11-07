@@ -1,24 +1,29 @@
-# README
+# Rails, Kamal, Vector, and Honeybadger
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a sample application to demonstrate how you can integrate Honeybadger
+Insights into your Rails application using Vector.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+1. A server to deploy your application.
 
-* System dependencies
+2. A container registry.
 
-* Configuration
+## Instructions
 
-* Database creation
+1. Clone the repo.
 
-* Database initialization
+2. Edit the `config/deploy.yml` with your server IP address and container
+registry account.
 
-* How to run the test suite
+3. Install the kamal gem.
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+gem install kamal
+```
 
-* Deployment instructions
+4. Setup and deploy the application.
 
-* ...
+```
+kamal deploy
+```

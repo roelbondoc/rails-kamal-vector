@@ -49,12 +49,12 @@ Rails.application.configure do
   # config.assume_ssl = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  config.force_ssl = true
+  config.force_ssl = false
 
   # Log to STDOUT by default
   config.logger = ActiveSupport::Logger.new(STDOUT)
-    .tap  { |logger| logger.formatter = ::Logger::Formatter.new }
-    .then { |logger| ActiveSupport::TaggedLogging.new(logger) }
+  config.lograge.enabled = true
+  config.lograge.formatter = Lograge::Formatters::Json.new
 
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
